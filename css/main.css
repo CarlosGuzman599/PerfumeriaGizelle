@@ -682,6 +682,8 @@ textarea {
   @media only screen and (min-width: 768px){
     a.bt-galeria{
       width: 33.3%;
+      position: relative;
+      margin: 0 auto;
     }
   }
 

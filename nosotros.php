@@ -1,24 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="">
 
-<head>
-  <meta charset="utf-8">
-  <title>Nosotros</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- Place favicon.ico in the root directory -->
-
-  
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/all.css">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald&family=PT+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css">
-
-  <meta name="theme-color" content="#fafafa">
-</head>
+<?php include_once 'includes/templates/head.php' ?>
 
 <body>
 
@@ -26,30 +9,36 @@
     <?php include_once 'includes/templates/barra.php' ?>
   </header>
 
-  <section class="contenido-nosotros contenedor">
+  <div class="nosotros">
 
-        <div class="imagen contenedor">
-            <img src="./img/about-us.jpg" alt="abourus.jpg">
-        </div>
+    <div class="contenedor doc-nosotros clearfix">
 
-        <div class="descricion-nosotros">
-            <p>AROMAS QUE DISTINGUEN...FRAGANCIAS QUE ENAMORAN.</p>
-            <p>En Perfumeria Gizelle contamos con gran variedad de fragancias de las mejores marcas. Estamos a unos pasos de Bancomer, en el Centro También contamos con sistema de apartado por 35 dias. Puedes mandar un Inbox y te podemos apartar tu perfume, depues a venir a recogerlo, tu apartado por Inbox solo dura 24 horas. Aumentamos nuestra gama de productos también manejamos todo tipo de estuches tanto de dama y caballero y también los perfumes replicas, han sido un gran exitó. Simpre te atenderemos con Gusto!!!</p>
-        </div>
-  </section>
+      <div class="icono-nosotros">
+        <img src="img/IconoV2.png" alt="icono">
+      </div>
 
-  <script src="js/vendor/modernizr-3.8.0.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
+      <div class="informacion-nosotros">
 
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
+        <h3>AROMAS QUE DISTINGUEN, FRAGANCIAS QUE ENAMORAN</h3>
+        <p>Perfumería Gizelle, contamos con más de 15 años de experiencia en el mercado, con los precios mas bajos, perfumes 100% originales. Contamos con: Servicio de apartado, pagos con tarjeta, excelentes precios, perfumes originales y replicas, servicio a domicilio, relojes para dama y caballero, fragancias, Cremas, sets de perfumes y fragancias. Nos ubicamos en plaza El Portal, a unos pasos de Bancomer, zona centro de ciudad Guzmán, jal.</p>
+
+        <a href="https://wa.me/523411027771" target="_blank" class="bt-ref"><i class="fab fa-whatsapp" ></i>341 102 7771</a>
+        <a href="https://goo.gl/maps/8pts5qA4itSfo8hE6" target="_blank" class="bt-ref" >¿Como llegar?</a>
+
+      </div>
+
+    </div><!-- contenedor -->
+
+  </div><!-- nosotros -->
+
+  <!-- <div id="mapa" class="mapa"></div> -->
+  <?php include_once 'includes/templates/mapa.php' ?>
+
+  
+
+  <?php include_once 'includes/templates/footer.php' ?>
+  <?php include_once 'includes/templates/librerias.php' ?>
+
 </body>
 
 </html>

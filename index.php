@@ -96,13 +96,12 @@
 
       <div class="informacion-nosotros">
         <p>Perfumería Gizelle, contamos con más de 15 años de experiencia en el mercado, con los precios mas bajos, perfumes 100% originales. Contamos con:
-        Servicio de apartado, pagos con tarjeta, excelentes precios, perfumes originales y replicas, servicio a domicilio, relojes para dama y caballero, fragancias, Cremas, estuches con perfumes y fragancias.
+        Servicio de apartado, pagos con tarjeta, excelentes precios, perfumes originales y replicas, servicio a domicilio, relojes para dama y caballero, fragancias, Cremas, sets de perfumes y fragancias.
         </p>
         <p>Plaza El Portal, Calle Federico del Toro 39, Centro, Cd Guzman, Jal.</p>
 
-        <a href="https://wa.me/523411027771" target="_blank">
-          <i class="fab fa-whatsapp"></i> 341 102 7771
-        </a>
+        <a href="https://wa.me/523411027771" target="_blank" class="bt-ref"><i class="fab fa-whatsapp" ></i>341 102 7771</a>
+        <a href="https://goo.gl/maps/8pts5qA4itSfo8hE6" target="_blank" class="bt-ref" >¿Como llegar?</a>
 
       </div>
 
@@ -110,7 +109,8 @@
 
   </div><!-- nosotros -->
 
-  <div id="mapa" class="mapa"></div>
+  <!-- <div id="mapa" class="mapa"></div> -->
+  <?php include_once 'includes/templates/mapa.php' ?>
 
   <div class="galeria">
     <div class="contenedor">

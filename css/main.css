@@ -166,7 +166,7 @@ textarea {
 
   h3{
     font-size: 1.8em;
-    color: #fe4918;
+    color: var(--color_terciario);
     font-family: 'PT Sans', sans-serif;
   }
 
@@ -523,16 +523,27 @@ textarea {
     display: none;
   }
 
-  div.informacion-nosotros a{
-    display: block; 
-    background-color: var(--color_terciario);
-    color: white;
+  a.bt-ref{
+    display: block;
+    background-color: transparent;
+    color: var(--color_terciario);
+    border: 2px solid var(--color_terciario);
     padding: 20px 10px;
     font-weight: bold;
     text-align: center;
     font-size: 2em;
-    border-radius: 10px;
     text-decoration: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  @media only screen and (min-width: 768px){
+    a.bt-ref{
+      display: inline;
+      width: 40%;
+      padding: 10px 20px;
+      margin: auto 30px;
+    }
   }
 
 
@@ -543,12 +554,6 @@ textarea {
       float: left;
       margin-right: 20px;
     }
-
-    div.informacion-nosotros a{
-      width: 100%;
-      margin-top: 30px;
-      float: right;
-    }
   }
 
   /* Mapa */
@@ -558,6 +563,7 @@ textarea {
     height: 420px;
     background-color: green;
     box-shadow: 0 0 50px #666;
+    margin-bottom: 10px;
   }
 
   /* Testimoniales */
@@ -735,21 +741,37 @@ textarea {
     }
   }
 
+  /* ----NOSOTROS---- */
+
+  .doc-nosotros{
+    margin-top: 20px;
+  }
+
+  @media only screen and (min-width: 768px){
+    .doc-nosotros a.bt-ref{
+      display: inline-block;
+      padding: 10px 50px;
+      width: 40%;
+    }
+  }
+
   /* Footer */
 
   footer {
     background-color: #353535;
     padding-top: 40px;
   }
+
   footer .contenedor > div {
     color: #ffffff;
     padding: 0px 20px;
     font-size: 12px;
   }
+
   @media only screen and (min-width:768px){
     footer .contenedor > div {
-        width: 33.3%;
-        float: left;
+      width: 33.3%;
+      float: left;
     }
   }
   
@@ -759,15 +781,18 @@ textarea {
     font-family: 'Oswald', sans-serif;
     margin-bottom: 20px;
   }
+
   footer h3 span {
     color: var(--color_terciario);
   }
+
   footer .ultimos-tweets li {
     margin-bottom: 10px;
   }
   footer nav.redes-sociales {
     text-align: left;
   }
+
   p.copyright {
     background-color: #2e2e2e;
     color: #ffffff;

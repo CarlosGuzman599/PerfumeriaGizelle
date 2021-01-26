@@ -11,6 +11,8 @@
 
   <div class="nosotros">
 
+    <h2>nosotros</h2>
+
     <div class="contenedor doc-nosotros clearfix">
 
       <div class="icono-nosotros">

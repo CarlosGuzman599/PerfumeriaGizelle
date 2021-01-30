@@ -170,6 +170,13 @@ textarea {
     font-family: 'PT Sans', sans-serif;
   }
 
+  h4{
+    font-size: 1.5em;
+    color: var(--color_primario);
+    font-family: 'PT Sans', sans-serif;
+    text-transform: uppercase;
+  }
+
   ul {
     list-style: none;
     margin:0;
@@ -328,10 +335,12 @@ textarea {
   nav.navegacion-principal a:hover {
     background-color: var(--color_terciario);
   }
+
   nav.navegacion-principal a:last-child {
     border: 2px solid var(--color_terciario);
     color: var(--color_terciario);
   }
+
   nav.navegacion-principal a:last-child:hover {
     color: #ffffff;
   }
@@ -393,7 +402,7 @@ textarea {
     float: left;
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
+    margin: 10px auto;
     text-align: center;
     border: 1px solid var(--color_terciario);
     transition: all .3s ease-in-out;
@@ -409,7 +418,7 @@ textarea {
   @media only screen and (min-width: 768px){
     .lista-productos li{
       width: 20%;
-      margin: 0 15px;
+      margin: 10px 15px;
     }
 
     ul.lista-productos{
@@ -523,7 +532,7 @@ textarea {
     display: none;
   }
 
-  a.bt-ref{
+  .bt-ref{
     display: block;
     background-color: transparent;
     color: var(--color_terciario);
@@ -747,6 +756,24 @@ textarea {
     margin-top: 20px;
   }
 
+  div.doc-nosotros span{
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    color: var(--color_terciario);
+    font-family: 'PT Sans', sans-serif;
+  }
+
+  div.doc-nosotros h4{
+    display: block;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 2.2em;
+    font-weight: bold;
+    font-family: var(--fuente_primaria);
+  }
+
   @media only screen and (min-width: 768px){
     .doc-nosotros a.bt-ref{
       display: inline-block;
@@ -754,6 +781,82 @@ textarea {
       width: 40%;
     }
   }
+
+  div.informacion-nosotros p.h{
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    font-size: 2em;
+  }
+
+  div.informacion-nosotros p.h-dia{
+    font-weight: bold;
+  }
+
+  /* ----PRODUCTOS---- */
+  div.barra-buscar{
+    background-color: white;
+    padding: 20px 5px;
+  }
+
+  .f-buscar{
+    font-family: var(--fuente_primaria);
+    font-weight: bold;
+    font-size: 2em;
+  }
+
+  .f-buscar select, .buscar{
+    width: 100%;
+    margin-top: 10px;
+    text-align-last: center;
+    text-align: center;
+    -ms-text-align-last: center;
+    -moz-text-align-last: center;
+  }
+
+  .bt-buscar{
+    display: block;
+    margin: 0 auto;
+    font-size: 1.5em;
+    border: none;
+    background-color: transparent;
+    color: var(--color_cuarto);
+  }
+
+  p.carrito{
+    text-align: center;
+    font-size: 1.3em;
+    color: var(--color_terciario);
+  }
+
+  @media only screen and (min-width: 768px){
+    div.barra-buscar .f-buscar{
+      display: flex;
+      height: 50px;
+      margin: 10px 10px;
+    }
+
+    .f-buscar select, .buscar{
+      margin-right: 10px;
+      margin-top: 0;
+      width: 38%;
+    }
+
+    p.carrito, .bt-buscar{
+      margin: auto 10px;
+      font-size: 1em;
+    }
+
+  }
+
+  @media only screen and (min-width: 480px){
+    .f-buscar select, .buscar{
+      margin-right: 10px;
+      margin-top: 0;
+      width: 43%;
+    }
+  }
+
 
   /* Footer */
 

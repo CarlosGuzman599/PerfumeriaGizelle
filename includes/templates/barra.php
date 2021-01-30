@@ -17,7 +17,7 @@
         <nav class="navegacion-principal clearfix">
             <a href="nosotros.php">Nosotros</a>
             <a href="galeria.php">Galeria</a>
-            <a href="#">nuestros productos</a>
+            <a href="productos.php">nuestros productos</a>
         </nav>
 
     </div>

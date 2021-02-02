@@ -14,4 +14,5 @@
 			 .bindTooltip('Plaza el Portal');
 		}
 	});
+
 })();

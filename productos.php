@@ -22,7 +22,7 @@
           <option value="value4">Estuches</option>
         </select>
 
-        <input name="nombre" type="text" class="buscar">
+        <input name="nombre" type="text" class="buscar" placeholder="Buscar" >
 
         <button type="submit" class="bt-buscar"><i class="fas fa-search"></i></button>
 
@@ -34,76 +34,7 @@
 
     <h2>Productos</h2>
 
-    <div class="contenido-muestra clearfix">
-
-      <ul class="lista-productos">
-
-        <li>
-          <img src="img/productos/min/1.jpg" alt="producto">
-          <p class="nombre-p">Nombre Largo 100ml</p>
-          <p class="precio-p"><span>$</span>100.00</p>
-          <a href="#" class="boton">+ <i class="fas fa-shopping-cart"></i></a>
-        </li>
-
-        <li>
-          <img src="img/productos/min/2.jpg" alt="producto">
-          <p class="nombre-p">Nombre Largo 100ml</p>
-          <p class="precio-p"><span>$</span>100.00</p>
-          <a href="#" class="boton">+ <i class="fas fa-shopping-cart"></i></a>
-        </li>
-
-        <li>
-          <img src="img/productos/min/3.jpg" alt="producto">
-          <p class="nombre-p">Nombre Largo 100ml</p>
-          <p class="precio-p"><span>$</span>100.00</p>
-          <a href="#" class="boton">+ <i class="fas fa-shopping-cart"></i></a>
-        </li>
-
-        <li>
-          <img src="img/productos/min/4.jpg" alt="producto">
-          <p class="nombre-p">Nombre Largo 100ml</p>
-          <p class="precio-p"><span>$</span>100.00</p>
-          <a href="#" class="boton">+ <i class="fas fa-shopping-cart"></i></a>
-        </li>
-
-        <li>
-          <img src="img/productos/min/5.jpg" alt="producto">
-          <p class="nombre-p">Nombre Largo 100ml</p>
-          <p class="precio-p"><span>$</span>100.00</p>
-          <a href="#" class="boton">+ <i class="fas fa-shopping-cart"></i></a>
-        </li>
-
-        <li>
-          <img src="img/productos/min/6.jpg" alt="producto">
-          <p class="nombre-p">Nombre Largo 100ml</p>
-          <p class="precio-p"><span>$</span>100.00</p>
-          <a href="#" class="boton">+ <i class="fas fa-shopping-cart"></i></a>
-        </li>
-
-        <li>
-          <img src="img/productos/min/7.jpg" alt="producto">
-          <p class="nombre-p">Nombre Largo 100ml</p>
-          <p class="precio-p"><span>$</span>100.00</p>
-          <a href="#" class="boton">+ <i class="fas fa-shopping-cart"></i></a>
-        </li>
-
-        <li>
-          <img src="img/productos/min/8.jpg" alt="producto">
-          <p class="nombre-p">Nombre Largo 100ml</p>
-          <p class="precio-p"><span>$</span>100.00</p>
-          <a href="#" class="boton">+ <i class="fas fa-shopping-cart"></i></a>
-        </li>
-
-        <li>
-          <img src="img/productos/min/9.jpg" alt="producto">
-          <p class="nombre-p">Nombre Largo 100ml</p>
-          <p class="precio-p"><span>$</span>100.00</p>
-          <a href="#" class="boton">+ <i class="fas fa-shopping-cart"></i></a>
-        </li>
-
-      </ul>
-
-    </div><!-- contenido-muestra clearfix -->
+    <?php include_once 'includes/templates/listado_productos.php' ?>
 
   </div>
 

@@ -13,6 +13,12 @@
 			L.marker([ 19.7041317,-103.4637139 ]).addTo(map).bindPopup('Perfumeria Gizelle').openPopup()
 			 .bindTooltip('Plaza el Portal');
 		}
+
+		//menu mobil
+		$('.menu-movil').on('click', function() {
+			$('.navegacion-principal').slideToggle();
+		});
+
 	});
 
 })();

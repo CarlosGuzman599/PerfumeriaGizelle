@@ -1,6 +1,5 @@
 (function() {
 	'use strict';
-	var regalo = document.getElementById('regalo');
 
 	document.addEventListener('DOMContentLoaded', function() {
 

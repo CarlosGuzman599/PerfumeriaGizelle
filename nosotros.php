@@ -21,7 +21,7 @@
 
       <div class="informacion-nosotros">
 
-        <p><span>AROMAS QUE DISTINGUEN, FRAGANCIAS QUE ENAMORAN</span></p>
+        <p><span>PERFUMERIA DE REINAS</span></p>
         <p>Perfumería Gizelle, contamos con más de 15 años de experiencia en el mercado, con los precios mas bajos, perfumes 100% originales. Contamos con: Servicio de apartado, pagos con tarjeta, excelentes precios, perfumes originales y replicas, servicio a domicilio, relojes para dama y caballero, fragancias, Cremas, sets de perfumes y fragancias. Nos ubicamos en plaza El Portal, a unos pasos de Bancomer, zona centro de ciudad Guzmán, jal.</p>
 
         <h4>horarios</h4>

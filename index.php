@@ -23,7 +23,8 @@
 
           <img src="./img/main_img.svg" alt="NoImagen">
 
-          <p class="slogan">AROMAS QUE DISTINGUEN, <span>FRAGANCIAS QUE ENAMORAN</span></p>
+          <p class="slogan"> PERFUMERIA DE <span>REINAS</span></p>
+          
         </div>
 
       </div>
@@ -45,25 +46,25 @@
         <li>
           <img src="img/1.jpg" alt="producto">
           <p>Perfumes</p>
-          <a href="#" class="boton">Ver más</a>
+          <a href="productos.php?tipo=perfume" id="btn-perfumes" class="boton">Ver más</a>
         </li>
 
         <li>
           <img src="img/2.jpg" alt="producto">
           <p>Fragancias </span></p>
-          <a href="#" class="boton">Ver más</a>
+          <a href="productos.php?tipo=fragancia" class="boton">Ver más</a>
         </li>
 
         <li>
           <img src="img/3.jpg" alt="producto">
           <p>Relojes</p>
-          <a href="#" class="boton">Ver más</a>
+          <a href="productos.php?tipo=reloj" class="boton">Ver más</a>
         </li>
 
         <li>
           <img src="img/4.jpg" alt="producto">
           <p>Estuches</p>
-          <a href="#" class="boton">Ver más</a>
+          <a href="productos.php?tipo=set" class="boton">Ver más</a>
         </li>
 
       </ul>

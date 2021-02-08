@@ -12,29 +12,31 @@
   <div class="productos">
 
     <div class="barra-buscar clearfix">
-      <form action="" class="f-buscar">
+      <div class="f-buscar">
 
-        <select name="categoria">
-          <option value="value0" selected>Todos</option>
-          <option value="value1">Perfume</option>
-          <option value="value2">Reloj</option>
-          <option value="value3">Fragancia</option>
-          <option value="value4">Estuches</option>
+        <select name="categoria" id="sl-categoria">
+          <option value="0" selected>TODO</option>
+          <?php include_once 'includes/templates/categorias.php' ?>
         </select>
 
-        <input name="nombre" type="text" class="buscar" placeholder="Buscar" >
+        <input id="txt-buscar" type="text" class="buscar" placeholder="Buscar" >
 
-        <button type="submit" class="bt-buscar"><i class="fas fa-search"></i></button>
+        <button type="button" id="btn-buscar" class="bt-buscar"><i class="fas fa-search"></i></button>
+        <script src="js/buscar.js" ></script>
 
         <p class="carrito">4<i class="fas fa-shopping-cart"></i></p>
 
-      </form>
+      </div>
 
     </div>
 
     <h2>Productos</h2>
 
-    <?php include_once 'includes/templates/listado_productos.php' ?>
+    <div id="productos-mostrar">
+
+      <?php include_once 'includes/templates/funciones/listado_productos.php' ?>
+
+    </div><!-- div id="productos-mostrar" -->
 
   </div>
 

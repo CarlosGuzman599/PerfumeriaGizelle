@@ -3,7 +3,7 @@
     <div class="contenedor clearfix">
 
         <div class="logo">
-            <a href="index.php">
+            <a href="./">
                 <img src="./img/logo.svg" alt="logo">
             </a>
         </div>
@@ -17,7 +17,7 @@
         <nav class="navegacion-principal clearfix">
             <a href="nosotros.php">Nosotros</a>
             <a href="galeria.php">Galeria</a>
-            <a href="productos.php">nuestros productos</a>
+            <a href="productos.php?tipo=todo">nuestros productos</a>
         </nav>
 
     </div>

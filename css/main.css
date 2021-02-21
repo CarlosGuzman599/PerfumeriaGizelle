@@ -105,7 +105,7 @@ textarea {
     --color_cuarto: #14cbf1;
 
     --fuente_primaria: 'Oswald', sans-serif;
-    --fuente_secundaria: 'PT Sans', sans-serif; 
+    --fuente_secundaria: 'Raleway', sans-serif;; 
   }
 
 
@@ -231,12 +231,21 @@ textarea {
     margin-right: 20px;
   }
 
+  a.log-in{
+    color: white!important;
+  }
+
   div.informacion{
     text-align: center;
     color: white;
   }
 
   @media (min-width: 768px){
+
+    a.log-in{
+      float: right;
+    }
+
     div.informacion{
       text-align: center;
       width: 70%;
@@ -593,6 +602,7 @@ textarea {
   }
 
   blockquote {
+    font-family: var(--fuente_secundaria);
     background-color: #ffffff;
     border: 1px solid #e1e1e1;
     border-radius: 10px;
@@ -602,6 +612,7 @@ textarea {
   }
 
   blockquote p {
+    font-family: var(--fuente_secundaria);
     text-align: justify!important;
     font-size: 1em!important;
     font-family: 'PT Sans', sans-serif;
@@ -731,7 +742,7 @@ textarea {
     width: 60%;
   }
 
-  div.newsletter a{
+  .btn-ghost{
     display: block;
     text-decoration: none;
     border: solid 2px white;
@@ -739,7 +750,7 @@ textarea {
     color: white;
     font-size: 1.5em;
     font-weight: bold;
-    margin: 0 auto;
+    margin: 10px auto;
     padding: 10px 10px;
     box-shadow: 0 0 25px black;
   }
@@ -748,6 +759,124 @@ textarea {
     div.newsletter a{
       width: 30%;
     }
+  }
+
+
+  /* ----LOG IN---- */
+
+  div.contenedor-formulario{
+    margin: auto;
+    padding: 10px 10px;
+    width: 90%;
+    height: 90%;
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 10px;
+  }
+
+  .tipo-sesion{
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 15px;
+    font-size: 1.2em;
+    background-color: transparent;
+    color: var(--color_terciario);
+    border: none;
+    width: 49%;
+  }
+
+  div.formulario{
+    font-family: var(--fuente_secundaria);
+    background-color: rgba(255, 255, 255, 0.507);
+    margin: 20px 20px;
+    box-shadow: 0 0 25px black;
+    border-radius: 10px;
+    padding: 20px;
+  }
+
+  div.formulario input[type=checkbox] {
+    transform: scale(1.5);
+  }
+
+  @media only screen and (min-width: 768px){
+    div.contenedor-formulario{
+      width: 80%;
+      padding: 40px 10px;
+      margin-top: 40px;
+    }
+
+    form.form-registro .parte{
+      display: inline-table;
+      width: 45%;
+    }
+
+    div.parte input{
+      margin: 5px auto!important;
+      font-size: 1.6em!important;
+    }
+  }
+
+  div.frame .icono{
+    text-align: center;
+    font-size: 3.5em;
+    margin: 0;
+    color: white;
+  }
+
+  div.formulario input,
+  div.formulario a{
+    display: block;
+    width: 90%;
+    font-size: 1.8em;
+    padding: 5px;
+    margin: 20px auto;
+    color: white;
+    font-weight: bold;
+    background: transparent;
+    border-radius: 5px;
+    border: none ;
+    text-align-last: center;
+    text-align: center;
+    -ms-text-align-last: center;
+    -moz-text-align-last: center;
+  }
+
+  div.formulario a, p{
+    font-size: 1em;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .ocultar{
+    display: none;
+  }
+
+  /** Notificaciones **/
+  .notificacion {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 1rem 3rem;
+    opacity: 0;
+    transition: opacity .5s ease;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 20px;
+    text-align: center;
+    font-family: var(--fuente_secundaria);
+    font-weight: bold;
+  }
+
+  .visible {
+    opacity: 1;
+  }
+
+  .correcto {
+    background-color: var(--color_terciario);
+    color: black;
+  }
+  .error {
+    background-color: red;
+    color: white;
   }
 
   /* ----NOSOTROS---- */
@@ -890,6 +1019,7 @@ textarea {
 
   footer {
     background-color: #353535;
+    font-family: var(--fuente_secundaria);
     padding-top: 40px;
   }
 
@@ -923,6 +1053,7 @@ textarea {
   footer nav.redes-sociales {
     text-align: left;
   }
+
 
   p.copyright {
     background-color: #2e2e2e;

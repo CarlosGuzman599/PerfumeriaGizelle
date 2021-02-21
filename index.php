@@ -5,6 +5,8 @@
 
 <body>
 
+  <?php $lista = "Shi se puede" ?>
+
   <header class="sitio-header">
 
     <div class="hero">
@@ -14,6 +16,7 @@
         <nav class="redes-sociales">
           <a href="https://www.facebook.com/Perfumeria-Gizelle-328325340636157" target="_blank" ><i class="fab fa-facebook-f"></i></a>
           <a href="https://www.instagram.com/perfumeria.gizelle/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="log-in.php" class="log-in"><i class="fas fa-sign-in-alt"></i></a>
         </nav>
 
         <div class="informacion">
@@ -206,7 +209,7 @@
     <div class="contenido contenedor">
       <p> regístrate al newsletter:</p>
       <img src="./img/logo.svg" alt="logo">
-      <a href="#" >Registro</a>
+      <a href="#" class="btn-ghost">Registro</a>
     </div> <!--.contenido-->
   </div><!--.newsletter-->
 

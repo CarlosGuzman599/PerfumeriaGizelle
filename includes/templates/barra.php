@@ -1,4 +1,4 @@
-<div class="barra">
+<div class="barra" id="barra">
 
     <div class="contenedor clearfix">
 

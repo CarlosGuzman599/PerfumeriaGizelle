@@ -5,6 +5,7 @@
         var btnBuscar = document.getElementById('btn-buscar');
         btnBuscar.addEventListener('click', BuscarProducto);
 
+        //AjaxNativo
         function BuscarProducto(){
             var ctnBuscar = document.getElementById('txt-buscar').value;
             var slCategoria = document.getElementById('sl-categoria').value;

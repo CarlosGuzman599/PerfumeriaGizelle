@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    if(isset($_SESSION['nombre_cliente'])){
+        header('Location:me.php');
+    }
+    if(isset($_GET['cerrar_sesion'])){
+        session_destroy();
+    }
+?>
+
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -13,21 +23,24 @@
 
         <div class="contenedor-formulario" id="contenedor-formulario">
 
-            <button class="tipo-sesion" id="btn-inicio">Iniciar sesion</button>
+            <button class="tipo-sesion" id="btn-inicio"  style="color: white;">Iniciar sesion</button>
             <button class="tipo-sesion" id="btn-registro">registrarse</button>
 
             <div class="formulario">
                 <div class="frame">
-                    <form method="POST" id="form-inicio" >
+                    <form method="POST" id="form-inicio">
                         <p class="icono"><i class="fas fa-users"></i></p>
+                        <input type="hidden" name="accion" value="inicio">
+
                         <input type="numer" name="tel" id="tel" class="no-letras" placeholder="Número telefonico" required>
                         <input type="password" name="pass" id="pass" placeholder="Contraseña" required>
                         <a href="#">Olvidé mi contraseña</a>
-                        <input type="submit" class="btn-login" id="log-in" value="Entrar">
+                        <input type="submit" class="btn-login" value="Entrar" >
                     </form>
 
                     <form method="POST" class="form-registro ocultar" id="form-registro">
                         <p class="icono"><i class="fas fa-user-plus"></i></p>
+                        <input type="hidden" name="accion" value="registro">
 
                         <div class="parte">
                             <input type="text" name="nombre" id="nombre" class="no-numeros" placeholder="Nombre" required>
@@ -39,10 +52,10 @@
                         <div class="parte">
                             <input type="password" name="nw-pass" id="nw-pass" placeholder="Contraseña" required>
                             <input type="password" name="cf-pass" id="cf-pass" placeholder="Confirmar Contraseña" required>
-                            <p>Notificar ofertas</p><input type="checkbox" name="newsletter" id="newsletter">
+                            <p>Notificar ofertas</p><input type="checkbox" name="newsletter" id="newsletter" checked>
                         </div>
 
-                        <input type="submit" id="sing-in" class="btn-login" value="Registrarse">
+                        <input type="submit" class="btn-login" value="Registro">
                     </form>
                 </div>
             </div>

@@ -228,11 +228,15 @@ textarea {
   nav.redes-sociales a{
     color: var(--color_terciario);
     font-size: 2em;
-    margin-right: 20px;
+    margin-right: 40px;
   }
 
   a.log-in{
+    display: contents;
     color: white!important;
+    text-decoration: none;
+    max-width: 40px;
+    font-family: var(--fuente_secundaria);
   }
 
   div.informacion{
@@ -1013,6 +1017,28 @@ textarea {
     width: 40px;
     margin-bottom: 10px;
     margin-right: 10px;
+  }
+
+  /* ----ME---- */
+
+  div.barra-me{
+    font-family: var(--fuente_secundaria);
+    margin: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  div.barra-me p{
+    font-size: 2em;
+  }
+
+  .bnts-compras{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  div.compras{
+    margin-bottom: 20px;
   }
 
   /* Footer */

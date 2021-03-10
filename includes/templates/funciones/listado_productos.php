@@ -20,7 +20,7 @@
   }
 
   try {
-    require_once('db_conexion.php');
+    include_once('db_conexion.php');
     $resultado = $conn->query($sql);
   } catch (Exception $e) {
     $error = $e->getMessage();
@@ -29,7 +29,6 @@
 ?>
 
 <div id="contenido-muestra" class="contenido-muestra clearfix">
-
 
   <ul class="lista-productos productos">
 
@@ -42,7 +41,11 @@
         <a href="#" class="boton">+ <i class="fas fa-shopping-cart"></i></a>
       </li>
 
-    <?php } ?>
+    <?php } 
+    
+      $conn->close();
+
+    ?>
 
   </ul>
 

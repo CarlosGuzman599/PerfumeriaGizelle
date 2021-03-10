@@ -16,7 +16,14 @@
         <nav class="redes-sociales">
           <a href="https://www.facebook.com/Perfumeria-Gizelle-328325340636157" target="_blank" ><i class="fab fa-facebook-f"></i></a>
           <a href="https://www.instagram.com/perfumeria.gizelle/" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="log-in.php" class="log-in"><i class="fas fa-sign-in-alt"></i></a>
+          <?php
+            session_start();
+            if(isset($_SESSION['nombre_cliente'])){
+              ?><a href="me.php" class="log-in"><?php echo $_SESSION['nombre_cliente'];?></i></a><?php
+            }else{
+              ?><a href="me.php" class="log-in"><i class="fas fa-sign-in-alt"></i></a><?php
+            }
+          ?>
         </nav>
 
         <div class="informacion">

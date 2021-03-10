@@ -26,7 +26,7 @@
 			const formRegistro = document.getElementById('form-registro');
 			const formularioLogIn = document.getElementById('form-inicio');
 			formularioLogIn.addEventListener('submit', validarLogIn);
-			formRegistro.addEventListener('submit', validarSingIn);
+			formRegistro.addEventListener('submit', validarRegistro);
 	
 			btInicio.addEventListener('click', function(){
 				btInicio.style.color = '#FFFFFF';
@@ -45,7 +45,7 @@
 			$(function(){
 				$(".no-letras").keydown(function(event){
 					//alert(event.keyCode);
-					if((event.keyCode < 48 || event.keyCode > 57) && event.keyCode !==8){
+					if((event.keyCode < 48 || event.keyCode > 57) && event.keyCode !==8 && event.keyCode !==9 && event.keyCode !==94){
 						return false;
 					}
 				});
@@ -54,7 +54,7 @@
 			$(function(){
 				$(".no-numeros").keydown(function(event){
 					//alert(event.keyCode);
-					if((event.keyCode < 65 || event.keyCode > 90) && (event.keyCode < 97 || event.keyCode > 122) && event.keyCode !==32 && event.keyCode !==8){
+					if((event.keyCode < 65 || event.keyCode > 90) && (event.keyCode < 97 || event.keyCode > 122) && event.keyCode !==32 && event.keyCode !==8 && event.keyCode !==9 && event.keyCode !==94){
 						return false;
 					}
 				});
@@ -66,29 +66,59 @@
 				var usuarioLogIn = document.getElementById('tel').value;
 	
 				if(!(usuarioLogIn.length === 10)){
-					mostrarNotificacion('Número telefonico de 10 caracteres', 'error');
+					mostrarNotificacion("Error!: "+'Número telefonico de 10 caracteres', 'error');
+				}else{
+					logIn_registro($('#form-inicio').serialize());
 				}
 			}
 	
-			function validarSingIn(e){
+			function validarRegistro(e){
 				e.preventDefault();
 				var erroresRegistro = '';
-	
+
+				var nwNombre = document.getElementById('nombre').value;
+				var newApellido = document.getElementById('apellido').value;
 				var newTel = document.getElementById('nw-tel').value;
-				if(!(newTel.length === 10)){
-					erroresRegistro = 'Número telefonico de 10 caracteres.';
+				var nwemail = document.getElementById('email').value;
+				var fechaNa = document.getElementById('fechaNa').value;
+				var newPass = document.getElementById('nw-pass').value;
+				//Solo para confirmar
+				var confirPass  = document.getElementById('cf-pass').value;
+				//hasta aqui
+
+
+				if(nwNombre.length>30){
+					erroresRegistro = 'Nombre menor de 30 caracteres.';
 				}
 
-				const FechaNa = document.getElementById('fechaNa').value;
-				var anoNa = parseInt(FechaNa[0]+FechaNa[1]+FechaNa[2]+FechaNa[3], 10);
-				var mesNa = parseInt(FechaNa[5]+FechaNa[6], 10);
-				var diaNa = parseInt(FechaNa[8]+FechaNa[9], 10);
+				
+				if(newApellido.length>30){
+					erroresRegistro = erroresRegistro + ' Apellido menor de 30 caracteres.';
+				}
+
+	
+				
+				if(!(newTel.length === 10)){
+					erroresRegistro = erroresRegistro +' Número telefonico de 10 caracteres.';
+				}
+
+				
+				if(nwemail.length>50){
+					erroresRegistro = erroresRegistro +' Correo menor de 50 caracteres.';
+				}
+
+				
+				var anoNa = parseInt(fechaNa[0]+fechaNa[1]+fechaNa[2]+fechaNa[3], 10);
+				var mesNa = parseInt(fechaNa[5]+fechaNa[6], 10);
+				var diaNa = parseInt(fechaNa[8]+fechaNa[9], 10);
 				var f = new Date();
 				var adulto = false;
-				if(f.getFullYear() - anoNa>=18){
-					if(f.getMonth()+1>mesNa){
+				if(parseInt(f.getFullYear()) - anoNa>=18){
+					if((parseInt(f.getFullYear()) - anoNa>18)){
 						adulto = true;
-					}else if(f.getMonth()+1 === mesNa && f.getDate() >= diaNa){
+					}else if(parseInt(f.getMonth())+1>mesNa){
+						adulto = true;
+					}else if(parseInt(f.getMonth())+1 === mesNa && parseInt(f.getDate()) >= diaNa){
 						adulto = true;
 					}
 				}
@@ -97,22 +127,52 @@
 					erroresRegistro = erroresRegistro + ' Edad minima de 18 años.';
 				}
 	
-				var newPass = document.getElementById('nw-pass').value;
-				var ConfirPass  = document.getElementById('cf-pass').value;
+
 				if(newPass.length<8){
 					erroresRegistro = erroresRegistro + ' La contraseña debe contener almenos 8 caracteres.';
-				}else if(!(newPass === ConfirPass)){
+					$('#nw-pass').val('');
+					$('#cf-pass').val('');
+				}else if(!(newPass === confirPass)){
 					erroresRegistro = erroresRegistro + ' La contraseña no coinciden.';
 					$('#nw-pass').val('');
 					$('#cf-pass').val('');
 				}
 	
 				if(!(erroresRegistro === '')){
-					mostrarNotificacion(erroresRegistro, 'error');
-				}else{
-					mostrarNotificacion('Chi', 'correcto');
+					mostrarNotificacion("Error!: "+erroresRegistro, 'error');
+				}else if(accion == "registra"){
+					logIn_registro($('#form-registro').serialize());
+				}else if(accion == "modificar"){
+					mostrarNotificacion("holi",'correcto')
 				}
 			}
+
+			function logIn_registro(datos){
+				$.ajax({
+					type:'POST',
+					url:'includes/templates/funciones/login_register.php',
+					data: datos,
+					success:function(e){
+						console.log(e);
+						var estado = JSON.parse(e);
+						if(estado.respuesta == 'correcto'){
+							mostrarNotificacion('Bienvenido '+estado.datos.nombre, 'correcto');
+							setTimeout(function(){
+								window.location.href = 'index.php'
+							}, 2000)
+						}else{
+							mostrarNotificacion(estado.tipo, 'error');
+						}
+					}
+				});
+				return false;
+			}
+		}
+
+		//Valida Fomularios me
+		if(document.getElementById('formularios-me')){
+			var formularioModificarpersona = document.getElementById('form-modificar');,
+			
 		}
 
 		function mostrarNotificacion(mensaje, clase) {
@@ -134,7 +194,7 @@
 				 }, 3000);
 			}, 100);
 	   
-	   }
+	   	}
 
 	});
 

@@ -32,13 +32,13 @@
 
   <ul class="lista-productos productos">
 
-    <?php while($producto = $resultado->fetch_assoc() ){ ?>
+    <?php while($producto = $resultado->fetch_assoc()){ ?>
 
       <li>
         <img class="img-producto" src="<?php echo $producto['img_producto'] ?>" alt="producto">
         <p class="nombre-p"><?php echo $producto['nombre_producto'] ?></p>
         <p class="precio-p"><img class="icono-categoria" src="<?php echo $producto['icono_categoria'] ?>" alt=""><span>$</span><?php echo $producto['precio_producto'] ?></p>
-        <a href="#" class="boton">+ <i class="fas fa-shopping-cart"></i></a>
+        <a href="#" class="boton">+<i class="fas fa-shopping-cart"></i></a>
       </li>
 
     <?php } 

@@ -124,6 +124,17 @@ textarea {
 
 
   /*Globales*/
+
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  input[type=number] {
+    -moz-appearance:textfield;
+  }
+
   .contenedor{
     width: 98%;
     margin: 0 auto;
@@ -881,6 +892,10 @@ textarea {
   .error {
     background-color: red;
     color: white;
+  }
+  .alerta {
+    background-color:orange;
+    color: black;
   }
 
   /* ----NOSOTROS---- */

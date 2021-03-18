@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 02, 2021 at 06:41 AM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.3
+-- Generation Time: Mar 13, 2021 at 12:23 AM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -39,12 +38,39 @@ CREATE TABLE `categoria` (
 --
 
 INSERT INTO `categoria` (`id_categoria`, `nombre_categoria`, `icono_categoria`) VALUES
-(1, 'reloj', 'img/categoria/watch.png'),
-(2, 'crema', 'img/categoria/body_lotion.png'),
-(3, 'perfume', 'img/categoria/fragance.png'),
-(4, 'set', 'img/categoria/set.png'),
-(5, 'fragancia', 'img/categoria/fragance_2.png'),
-(6, 'mix', 'img/categoria/mix.png');
+(1, 'RELOJ', 'img/categoria/watch.png'),
+(2, 'CREMA', 'img/categoria/body_lotion.png'),
+(3, 'PERFUME', 'img/categoria/fragance.png'),
+(4, 'ESTUCHE', 'img/categoria/set.png'),
+(5, 'FRAGANCIA', 'img/categoria/fragance_2.png'),
+(6, 'MIX', 'img/categoria/mix.png');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `clientes`
+--
+
+CREATE TABLE `clientes` (
+  `id_cliente` int(4) NOT NULL,
+  `nombre_cliente` varchar(30) NOT NULL,
+  `apellido_cliente` varchar(30) NOT NULL,
+  `tel_cliente` varchar(10) NOT NULL,
+  `email_cliente` varchar(50) NOT NULL,
+  `fecha_cliente` date NOT NULL,
+  `password_cliente` varchar(60) NOT NULL,
+  `notifica_cliente` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `clientes`
+--
+
+INSERT INTO `clientes` (`id_cliente`, `nombre_cliente`, `apellido_cliente`, `tel_cliente`, `email_cliente`, `fecha_cliente`, `password_cliente`, `notifica_cliente`) VALUES
+(26, 'Carlos', 'Guzmán', '3411785798', 'carlilloz.599@gmail.com', '1995-07-14', '$2y$12$UmnKputjUTBMKSrz7/FQR.HqvMo2pYLvguDd/u89RIbzaZUDa9ni.', 'on'),
+(27, 'Mayra Azucena', 'Encarnacion', '3411455101', 'susy@gmail.com', '2000-09-20', '$2y$12$teKRWXUjVQIcqzQYKRhJu.dNt0bOKU5iESX8J035cekjQM0GgyZU2', 'on'),
+(28, 'Celia', 'Garcia', '3411027771', 'celiagarcia1234@gmail.com', '1990-03-13', '$2y$12$5xIu30g8g3V9R1kTzOquLeJGYXzPs7mz2L1oHDCS2k1/h7DLI9XdW', 'on'),
+(29, 'Gizelle', 'Garcia', '3411111111', 'guizelle@gmail.com', '2002-03-13', '$2y$12$1k1ABrtqNrzNjc4czP9YceAyiuSvfl3xXbQEgrYwETMqZQPVMxOFq', 'on');
 
 -- --------------------------------------------------------
 
@@ -85,6 +111,12 @@ ALTER TABLE `categoria`
   ADD PRIMARY KEY (`id_categoria`);
 
 --
+-- Indexes for table `clientes`
+--
+ALTER TABLE `clientes`
+  ADD PRIMARY KEY (`id_cliente`);
+
+--
 -- Indexes for table `productos`
 --
 ALTER TABLE `productos`
@@ -100,6 +132,12 @@ ALTER TABLE `productos`
 --
 ALTER TABLE `categoria`
   MODIFY `id_categoria` tinyint(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `clientes`
+--
+ALTER TABLE `clientes`
+  MODIFY `id_cliente` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `productos`

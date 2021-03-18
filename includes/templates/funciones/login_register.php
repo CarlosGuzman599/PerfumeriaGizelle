@@ -59,10 +59,10 @@
 
         try{
             include_once 'db_conexion.php';
-            $stmt = $conn->prepare("SELECT * FROM clientes WHERE tel_cliente = ?;");
+            $stmt = $conn->prepare("SELECT id_cliente,nombre_cliente,password_cliente FROM clientes WHERE tel_cliente = ?;");
             $stmt->bind_param("s", $telefono);
             $stmt->execute();
-            $stmt->bind_result($id_cliente_db, $nombre_db, $apellido_db, $telefono_db, $email_db, $fecha_db, $password_db, $noti_db);
+            $stmt->bind_result($id_cliente_db, $nombre_db, $password_db);
             if($stmt->affected_rows){
                 $existe = $stmt->fetch();
 
@@ -78,7 +78,7 @@
                         session_start();
                         $_SESSION['id_cliente'] = $id_cliente_db;
                         $_SESSION['nombre_cliente'] = $nombre_db;
-                        $_SESSION['tel_cliente'] = $telefono_db;
+                        $_SESSION['tel_cliente'] = $telefono;
                     }else{
                         $respuesta = array(
                             'respuesta' => 'error',

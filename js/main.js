@@ -352,6 +352,34 @@
 			}
 		}
 
+		if(document.getElementById('productos-mostrar')){
+			$(document).ready(function(){
+				$('body').on('click', '#contenido-muestra .btn-addcar', function(){
+				  //alert($(this).attr('id'))
+				  agregarCarrito($(this).attr('id'))
+				})
+			})
+
+			function agregarCarrito(id){
+				console.log("-"+id);
+				$.ajax({
+					type:'POST',
+					url:'includes/templates/funciones/carrito.php',
+					data: "accion=add&id="+id,
+					success:function(e){
+						//console.log(e);
+						var estado = JSON.parse(e);
+						if(estado.respuesta == 'correcto'){
+							console.log(estado);
+						}else{
+							mostrarNotificacion(estado.tipo, 'error');
+						}
+					}
+				});
+				return false;
+			}
+		}
+
 		function mostrarNotificacion(mensaje, clase) {
 			const formularioContenedor = document.getElementById('barra');
 			var notificacion = document.createElement('div');

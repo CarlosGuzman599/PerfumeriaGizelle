@@ -971,9 +971,11 @@ textarea {
     color: var(--color_cuarto);
   }
 
-  p.carrito{
+  a.carrito{
+    margin: auto 0;
     text-align: center;
-    font-size: 1.3em;
+    text-decoration: none;
+    font-size: 1em;
     color: var(--color_terciario);
   }
 
@@ -990,7 +992,7 @@ textarea {
       width: 38%;
     }
 
-    p.carrito, .bt-buscar{
+    a.carrito, .bt-buscar{
       margin: auto 10px;
       font-size: 1em;
     }

@@ -126,6 +126,29 @@
         $num_ext = filter_var($_POST['numero-ext'], FILTER_SANITIZE_STRING);
         $num_int = filter_var($_POST['numero-int'], FILTER_SANITIZE_STRING);
 
+        
+        try{
+            include_once 'db_conexion.php';
+            $stmt = $conn->prepare("UPDATE clientes SET dir_pais_cliente=?, dir_estado_cliente=?, dir_municipio_cliente=?, dir_cp_cliente=?, dir_calle_cliente=?, dir_numext_cliente=?, dir_numint_cliente=? WHERE id_cliente =".$_SESSION['id_cliente']);
+            $stmt->bind_param("sssssss", $pais, $entidad, $ciudad, $cp, $calle, $num_ext, $num_int);
+            $stmt->execute();
+
+            $respuesta = array(
+                'respuesta' => 'correcto'
+            );
+
+            $stmt->close();
+            $conn->close();
+            
+        }catch(Exception $e){
+            $respuesta = array(
+                'respuesta' => 'error',
+                'tipo' => "Error!: ".$e->getMessage()
+            );
+        }
+
+        /*
+
         $respuesta = array(
             'respuesta'=> 'correcto',
             'datos' => array(
@@ -139,6 +162,8 @@
             'num_ext' => $num_ext,
             'num_int' => $num_int)
         );
+
+        */
 
         echo json_encode($respuesta);
     }

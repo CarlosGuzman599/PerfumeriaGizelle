@@ -39,10 +39,10 @@
         <p class="nombre-p"><?php echo $producto['nombre_producto'] ?></p>
         <p class="categoria-precio">
           <img class="icono-categoria" src="<?php echo $producto['icono_categoria'] ?>" alt="">
-          <span>$</span><?php echo $producto['precio_producto'] ?>
+          <span>$<?php echo $producto['precio_producto'];?></span>
         </p>
-        <p class="btn-addcar" id="<?php echo $producto['id_producto'] ?>"><i class="fas fa-cart-plus"></i></p>
-        <!-- a href="#" class="boton">+<i class="fas fa-shopping-cart"></i></a> -->
+        <p class="btn-addcar" id="<?php echo $producto['id_producto']?>"><i class="fas fa-cart-plus"></i></p>
+
       </li>
 
     <?php } 

@@ -1,7 +1,9 @@
 <!doctype html>
 <html class="no-js" lang="">
 
-<?php include_once 'includes/templates/head.php' ?>
+
+<?php include_once 'includes/templates/head.php';?>
+<?php session_start(); ?>
 
 <body>
 
@@ -24,7 +26,20 @@
         <button type="button" id="btn-buscar" class="bt-buscar"><i class="fas fa-search"></i></button>
         <script src="js/buscar.js" ></script>
 
-        <p class="carrito">4<i class="fas fa-shopping-cart"></i></p>
+        <a href="carrito.php" class="carrito">
+
+          <span id="total_items"> 
+            <?php
+              if(isset($_SESSION['total_items'])){
+                echo $_SESSION['total_items'];
+              }else{
+                echo "0";
+              }
+            ?> 
+          </span>
+          <i class="fas fa-shopping-cart"></i>
+
+        </a>
 
       </div>
 

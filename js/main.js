@@ -342,7 +342,8 @@
 						//console.log(e);
 						var estado = JSON.parse(e);
 						if(estado.respuesta == 'correcto'){
-							console.log(estado);
+							//console.log(estado);
+							mostrarNotificacion("Datos domiciliarios almacenados correctamente", 'correcto');
 						}else{
 							mostrarNotificacion(estado.tipo, 'error');
 						}
@@ -361,7 +362,6 @@
 			})
 
 			function agregarCarrito(id){
-				console.log("-"+id);
 				$.ajax({
 					type:'POST',
 					url:'includes/templates/funciones/carrito.php',
@@ -370,9 +370,14 @@
 						//console.log(e);
 						var estado = JSON.parse(e);
 						if(estado.respuesta == 'correcto'){
-							console.log(estado);
+							//console.log(estado);
+							document.getElementById('total_items').innerHTML = estado.datos.total_items;
+							mostrarNotificacion("Nuevo articulo en carrito", 'correcto');
 						}else{
 							mostrarNotificacion(estado.tipo, 'error');
+							setTimeout(function(){
+								window.location.href = 'productos.php'
+							}, 1000)
 						}
 					}
 				});
